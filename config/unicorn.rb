@@ -1,5 +1,5 @@
 # Set the working application directory 
-working_directory "/opt/apps/shipmate" 
+working_directory "/opt/apps/shipmate/current" 
 # Unicorn PID file location 
 pid "/opt/apps/shipmate/pids/unicorn.pid "
 # Path to logs 
