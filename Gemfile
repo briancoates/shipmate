@@ -56,7 +56,7 @@ gem 'browser', '~> 0.4.0' #device family detection
 gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano', group: :development
+gem 'capistrano', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
