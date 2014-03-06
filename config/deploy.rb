@@ -2,7 +2,7 @@
 lock '3.1.0'
 
 set :application, 'Shipmate'
-set :repo_url, 'https://github.com/tmecklem/shipmate.git'
+set :repo_url, 'http://gitlab01.dev.medplus.com/mobile-team/shipmate.git'
 
 # Default branch is :master
 set :branch, 'master'
