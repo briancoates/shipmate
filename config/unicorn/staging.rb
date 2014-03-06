@@ -11,5 +11,3 @@ listen "/opt/apps/shipmate/current/tmp/sockets/unicorn.shipmate.sock"
 worker_processes 2 
 # Time-out 
 timeout 30
-
-rails_env = ENV['RAILS_ENV'] || 'production'

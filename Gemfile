@@ -44,6 +44,9 @@ end
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
+
+  gem 'capistrano'
+  gem 'sepastian-capistrano3-unicorn', :require => false
 end
 
 gem 'whenever', '~> 0.9.0' #cron
@@ -54,9 +57,6 @@ gem 'browser', '~> 0.4.0' #device family detection
 
 # Use unicorn as the app server
 gem 'unicorn'
-
-# Use Capistrano for deployment
-gem 'capistrano', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

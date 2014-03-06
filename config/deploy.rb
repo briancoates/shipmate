@@ -1,3 +1,5 @@
+require 'capistrano/unicorn'
+
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
@@ -34,6 +36,10 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+
+after 'deploy:restart', 'unicorn:reload'    # app IS NOT preloaded
+after 'deploy:restart', 'unicorn:restart'   # app preloaded
+after 'deploy:restart', 'unicorn:duplicate' # before_fork hook implemented (zero downtime deployments)
 
 namespace :deploy do
 

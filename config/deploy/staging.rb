@@ -4,7 +4,7 @@
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
 # Don't declare `role :all`, it's a meta role
-#role :app, %w{jenkins@jenkins-osx-2.corp.medplus.com}
+role :app, %w{jenkins@jenkins-osx-2.corp.medplus.com}
 role :web, %w{jenkins@jenkins-osx-2.corp.medplus.com}
 #role :db,  %w{jenkins@jenkins-osx-2.corp.medplus.com}
 
