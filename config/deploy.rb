@@ -7,7 +7,7 @@ set :application, 'Shipmate'
 set :repo_url, 'http://gitlab01.dev.medplus.com/mobile-team/shipmate.git'
 
 # Default branch is :master
-set :branch, 'develop'
+set :branch, 'mobile_team'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
