@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
@@ -45,8 +45,9 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
 
-  gem 'capistrano'
-  gem 'sepastian-capistrano3-unicorn', :require => false
+  gem 'capistrano', '~> 3.1.0'
+  gem 'capistrano-rails', '~> 1.1.1'
+  gem 'capistrano-bundler'
 end
 
 gem 'whenever', '~> 0.9.0' #cron
