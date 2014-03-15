@@ -17,7 +17,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-gem 'jquery_mobile_rails' #mobile html5 framework
+gem 'jquery_mobile_rails', '~> 1.4.1' #mobile html5 framework
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -53,6 +53,12 @@ end
 
 gem 'whenever', '~> 0.9.0' #cron
 gem 'browser', '~> 0.4.0' #device family detection
+
+# Required to parse apk files
+gem "apktools"
+
+# Required to parse docs
+gem "nokogiri"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
