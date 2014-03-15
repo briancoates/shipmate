@@ -64,10 +64,10 @@ set(:symlinks, [
 ])
 
 desc "Restart Unicorn" 
-  task :restart_unicorn, :roles => :app do
-    run "#{deploy_to}/shared/config/unicorn_init.sh"
-  end
+task :restart_unicorn, :roles => :app do
+  run "#{deploy_to}/shared/config/unicorn_init.sh"
 end
+
 
 # this:
 # http://www.capistranorb.com/documentation/getting-started/flow/
