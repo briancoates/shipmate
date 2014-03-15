@@ -63,6 +63,11 @@ set(:symlinks, [
   }
 ])
 
+desc "Restart Unicorn" 
+  task :restart_unicorn, :roles => :app do
+    run "#{deploy_to}/shared/config/unicorn_init.sh"
+  end
+end
 
 # this:
 # http://www.capistranorb.com/documentation/getting-started/flow/
@@ -74,6 +79,8 @@ namespace :deploy do
   before :deploy, "deploy:check_revision"
   # only allow a deploy with passing tests to deployed
   before :deploy, "deploy:run_tests"
+
+  after :deploy, "restart_unicorn"
   # compile assets locally then rsync
   after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
   after :finishing, 'deploy:cleanup'
