@@ -39,6 +39,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'guard-rails'
   gem 'terminal-notifier-guard'
+  gem 'debugger', '~> 1.6.6'
 end
 
 group :development do
@@ -65,6 +66,3 @@ gem "nokogiri"
 
 # Use unicorn as the app server
 gem 'unicorn'
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
