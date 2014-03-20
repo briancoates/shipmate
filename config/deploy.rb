@@ -10,6 +10,12 @@ set :branch, 'mobile_team'
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/opt/apps/shipmate'
 
+set :rbenv_type, :user # or :system, depends on your rbenv setup
+set :rbenv_ruby, '2.1.1'
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+set :rbenv_roles, :all # default value
+
 # Default value for :scm is :git
 # set :scm, :git
 
@@ -63,10 +69,10 @@ set(:symlinks, [
   }
 ])
 
-desc "Restart Unicorn" 
-task :restart_unicorn, :roles => :app do
-  run "#{deploy_to}/shared/config/unicorn_init.sh"
-end
+#desc "Restart Unicorn" 
+#task :restart_unicorn, :roles => :app do
+#  run "#{deploy_to}/shared/config/unicorn_init.sh"
+#end
 
 
 # this:
@@ -80,7 +86,7 @@ namespace :deploy do
   # only allow a deploy with passing tests to deployed
   before :deploy, "deploy:run_tests"
 
-  after :deploy, "restart_unicorn"
+  #after :deploy, "restart_unicorn"
   # compile assets locally then rsync
   after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
   after :finishing, 'deploy:cleanup'
