@@ -5,7 +5,7 @@ set :application, 'shipmate'
 set :repo_url, 'http://gitlab01.dev.medplus.com/mobile-team/shipmate.git'
 
 # Default branch is :master
-set :branch, 'mobile_team'
+set :branch, fetch(:stage)
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/opt/apps/shipmate'
