@@ -1,6 +1,8 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
+disable_log_formatters
+
 set :application, 'shipmate'
 set :repo_url, 'http://gitlab01.dev.medplus.com/mobile-team/shipmate.git'
 
