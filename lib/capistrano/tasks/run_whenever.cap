@@ -1,0 +1,10 @@
+namespace :deploy do
+  desc "Runs whenever and updates crontab"
+
+  task :update_crontab do
+  	on roles(:app) do
+      execute "cd #{deploy_to}/current && rbenv exec bundle exec whenever --write-crontab"
+    end
+  end
+end
+

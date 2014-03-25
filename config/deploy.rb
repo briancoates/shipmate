@@ -1,8 +1,6 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
-require "whenever/capistrano"
-
 set :application, 'shipmate'
 set :repo_url, 'http://gitlab01.dev.medplus.com/mobile-team/shipmate.git'
 
@@ -91,5 +89,6 @@ namespace :deploy do
   #after :deploy, "restart_unicorn"
   # compile assets locally then rsync
   after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
+  after :finishing, 'deploy:update_crontab'
   after :finishing, 'deploy:cleanup'
 end
