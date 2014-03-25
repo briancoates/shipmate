@@ -3,8 +3,6 @@ lock '3.1.0'
 
 require "whenever/capistrano"
 
-disable_log_formatters
-
 set :application, 'shipmate'
 set :repo_url, 'http://gitlab01.dev.medplus.com/mobile-team/shipmate.git'
 
