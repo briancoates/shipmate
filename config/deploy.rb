@@ -86,7 +86,7 @@ namespace :deploy do
   # only allow a deploy with passing tests to deployed
   before :deploy, "deploy:run_tests"
 
-  #after :deploy, "restart_unicorn"
+  after :deploy, "deploy:restart"
   # compile assets locally then rsync
   after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
   after :finishing, 'deploy:update_crontab'

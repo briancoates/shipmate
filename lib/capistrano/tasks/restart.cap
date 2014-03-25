@@ -2,7 +2,10 @@ namespace :deploy do
   desc 'Restart unicorn application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      sudo "/etc/init.d/unicorn_#{fetch(:full_app_name)} restart"
+      execute %Q(cd #{deploy_to}/current && kill `ps ax | grep "[u]nicorn.*master" | cut -f1 -d" "`; true)
+      sleep 4
+      execute %Q(cd #{deploy_to}/current && rbenv exec bundle exec unicorn -c ../../shared/config/unicorn.rb -D)
+      #sudo "/etc/init.d/unicorn_#{fetch(:full_app_name)} restart"
     end
   end
 end
