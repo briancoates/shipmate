@@ -12,5 +12,5 @@
           %p=link_to(app_name, list_android_app_releases_path(app_name), :class => "ui-btn ui-btn-icon-right ui-icon-carat-r")
   %div{:data => {:role => "footer"}}
     - unless @cert_url.nil?
-      =link_to('Download Certificate', @cert_url)
+      =link_to('Download Certificate', @cert_url, :"data-ajax" => "false")
     
