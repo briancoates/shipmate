@@ -18,6 +18,7 @@ class AppsController < ApplicationController
   def index
     @ios_app_names = app_names(@ios_dir) if [:iphone,:ipad,:desktop].include?(@device_type)
     @android_app_names = app_names(@android_dir) if [:android,:desktop].include?(@device_type)
+    @cert_url = self.cert_url
   end
 
   def app_names(app_dir)
@@ -33,4 +34,12 @@ class AppsController < ApplicationController
     end
   end
 
+  def cert_url
+    cert_file = Dir.glob(Rails.root.join("public/cert","*.crt")).first
+    if cert_file
+      "#{request.base_url}/cert/#{cert_file.split('/').last}"
+    else
+      nil
+    end
+  end
 end

@@ -10,4 +10,7 @@
         %h2="Android Apps"
         - @android_app_names.each do |app_name|
           %p=link_to(app_name, list_android_app_releases_path(app_name), :class => "ui-btn ui-btn-icon-right ui-icon-carat-r")
+  %div{:data => {:role => "footer"}}
+    - unless @cert_url.nil?
+      =link_to('Download Certificate', @cert_url)
     
