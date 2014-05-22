@@ -4,8 +4,16 @@
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
 # Don't declare `role :all`, it's a meta role
-role :app, %w{jenkins@jenkins-osx-2.corp.medplus.com}
-role :web, %w{jenkins@jenkins-osx-2.corp.medplus.com}
+
+# ssh -i AmazonMobileTeam.pem ec2-user@shipmate.htsincubator.com
+role :app, %w{ec2-user@shipmate.htsincubator.com}
+role :web, %w{ec2-user@shipmate.htsincubator.com}
+
+# -- PRE AWS -----
+# role :app, %w{jenkins@jenkins-osx-2.corp.medplus.com}
+# role :web, %w{jenkins@jenkins-osx-2.corp.medplus.com}
+# -- PRE AWS -----
+
 #role :db,  %w{deploy@example.com}
 
 # Extended Server Syntax
